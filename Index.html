@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumreen Fatima — Developer Portfolio</title>
+<meta name="description" content="Sumreen Fatima — CS student building mobile and web applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Custom playful cursor -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- Confetti canvas for easter egg -->
+<canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
+
+<!-- Decorative floating blobs (ambient background) -->
+<div class="blobs" aria-hidden="true">
+  <span class="blob blob--1"></span>
+  <span class="blob blob--2"></span>
+  <span class="blob blob--3"></span>
+</div>
+
+<!-- Top nav -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand">Sumreen <span class="nav__brand-dot">•</span></a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#about" class="nav__link">About</a>
+    <a href="#skills" class="nav__link">Skills</a>
+    <a href="#projects" class="nav__link">Projects</a>
+    <a href="#contact" class="nav__link">Contact</a>
+  </nav>
+
+  <a href="Sumreen_Fatima_CV.pdf" class="nav__cta" download>Download CV</a>
+
+  <button class="nav__menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-menu__link">About</a>
+  <a href="#skills" class="mobile-menu__link">Skills</a>
+  <a href="#projects" class="mobile-menu__link">Projects</a>
+  <a href="#contact" class="mobile-menu__link">Contact</a>
+  <a href="Sumreen_Fatima_CV.pdf" class="nav__cta nav__cta--mobile" download>Download CV</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <p class="hero__eyebrow">Hi there, I'm</p>
+    <h1 class="hero__name">
+      <button class="hero__name-text hero__name-btn" id="nameEgg" aria-label="Click for a surprise" type="button">Sumreen Fatima</button>
+      <svg class="hero__underline" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2 14 C 80 4, 160 18, 240 8 S 360 4, 398 12" />
+      </svg>
+    </h1>
+    <p class="hero__tagline">
+      A computer science student who turns ideas into real, working apps, currently building for
+      <span class="hero__highlight">web</span> and <span class="hero__highlight">mobile</span>,
+      and exploring <span class="hero__highlight">AI &amp; machine learning</span> along the way.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#projects" class="btn btn--primary">
+        See my work
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn btn--ghost">Say hello</a>
+    </div>
+
+    <div class="hero__social">
+      <a href="https://github.com/Sumreen-SF" target="_blank" rel="noopener" aria-label="GitHub" class="social-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.27-.01-1.16-.02-2.11-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 015.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.7 5.39-5.27 5.67.41.36.78 1.07.78 2.15 0 1.56-.01 2.81-.01 3.19 0 .31.21.67.8.56A10.51 10.51 0 0023.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sumreen-fatima-sf08" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      </a>
+      <a href="mailto:fatimasumreen08@gmail.com" aria-label="Email" class="social-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3V5z"/><path d="M3 6l9 7 9-7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills" data-reveal>
+    <p class="section__eyebrow">What I work with</p>
+    <h2 class="section__title">Skills &amp; Tools</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="skill-card__emoji" aria-hidden="true">💻</span>
+        <h3 class="skill-card__title">Languages</h3>
+        <div class="skill-card__tags">
+          <span class="tag">Java</span>
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">PHP</span>
+          <span class="tag">Dart</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <span class="skill-card__emoji" aria-hidden="true">🌐</span>
+        <h3 class="skill-card__title">Web</h3>
+        <div class="skill-card__tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">PHP</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <span class="skill-card__emoji" aria-hidden="true">📱</span>
+        <h3 class="skill-card__title">Mobile</h3>
+        <div class="skill-card__tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Android Studio</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <span class="skill-card__emoji" aria-hidden="true">🔧</span>
+        <h3 class="skill-card__title">Tools</h3>
+        <div class="skill-card__tags">
+          <span class="tag">Git</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">SQLite</span>
+        </div>
+      </div>
+
+      <div class="skill-card skill-card--learning">
+        <span class="skill-card__emoji" aria-hidden="true">🌱</span>
+        <h3 class="skill-card__title">Currently exploring</h3>
+        <div class="skill-card__tags">
+          <span class="tag tag--learning">Artificial Intelligence</span>
+          <span class="tag tag--learning">Machine Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects" data-reveal>
+    <p class="section__eyebrow">A few things I've built</p>
+    <h2 class="section__title">Projects</h2>
+    <p class="section__intro">From idea to something real and working — here's what I've shipped so far.</p>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-card__badge">01</div>
+        <h3 class="project-card__title">AI Meal Planner &amp; Calorie Scanner</h3>
+        <p class="project-card__desc">
+          A Flutter mobile app that generates personalized meal plans and estimates calorie content
+          straight from a photo of your food, using on-device image recognition — no account, no server,
+          just point and go.
+        </p>
+        <ul class="project-card__features">
+          <li>Camera-based food recognition to auto-estimate calories</li>
+          <li>Personalized meal plan generation</li>
+          <li>Fully offline, local data storage</li>
+        </ul>
+        <div class="project-card__tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Dart</span>
+          <span class="tag">ML Image Recognition</span>
+          <span class="tag">SQLite</span>
+        </div>
+        <a href="https://github.com/Sumreen-SF/ai-meal-planner-calorie-scanner" class="project-card__link" target="_blank" rel="noopener">
+          View source
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__badge">02</div>
+        <h3 class="project-card__title">Task Manager</h3>
+        <p class="project-card__desc">
+          A full-featured productivity app built to actually replace a sticky-note habit — not just
+          check a box for a class project.
+        </p>
+        <ul class="project-card__features">
+          <li>Subtasks with live progress bars and checklist completion</li>
+          <li>Recurring tasks scheduled by day of week</li>
+          <li>Custom notification sounds, light/dark theme support</li>
+        </ul>
+        <div class="project-card__tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Dart</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">flutter_local_notifications</span>
+        </div>
+        <a href="https://github.com/Sumreen-SF/task-manager-app" class="project-card__link" target="_blank" rel="noopener">
+          View source
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__badge">03</div>
+        <h3 class="project-card__title">SkyCast — Mood-Based Weather App</h3>
+        <p class="project-card__desc">
+          A Flutter weather app that goes beyond a temperature and icon — it delivers outfit advice and
+          student routine alerts, with a hand-painted UI that re-themes itself to match the sky outside.
+        </p>
+        <ul class="project-card__features">
+          <li>Live weather, forecasts, and air quality via the OpenWeatherMap API</li>
+          <li>Outfit advisor and commute/study-window alerts based on real-time conditions</li>
+          <li>Hand-painted weather animations built with CustomPainter — no GIF or Lottie assets</li>
+        </ul>
+        <div class="project-card__tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">Dart</span>
+          <span class="tag">Provider</span>
+          <span class="tag">OpenWeatherMap API</span>
+          <span class="tag">Geolocator</span>
+        </div>
+        <a href="https://github.com/Sumreen-SF/skycast-weather-app" class="project-card__link" target="_blank" rel="noopener">
+          View source
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__badge">04</div>
+        <h3 class="project-card__title">This Portfolio</h3>
+        <p class="project-card__desc">
+          The site you're on right now — designed and hand-coded from scratch, no templates, deployed
+          live for anyone to visit.
+        </p>
+        <ul class="project-card__features">
+          <li>Custom design system, built mobile-first and fully responsive</li>
+          <li>Soft animations and accessible, keyboard-friendly navigation</li>
+          <li>Live working contact form</li>
+        </ul>
+        <div class="project-card__tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <a href="https://github.com/Sumreen-SF" class="project-card__link" target="_blank" rel="noopener">
+          View source
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--contact" id="contact" data-reveal>
+    <p class="section__eyebrow">Let's talk</p>
+    <h2 class="section__title">Get in Touch</h2>
+    <p class="section__intro">Have an internship opening, or just want to say hi? My inbox is always open.</p>
+
+    <div class="contact-wrap">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xwvdeeod" method="POST">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about the role, or just say hi." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">
+          Send message
+          <svg viewBox="0 0 16 16" fill="none"><path d="M14.5 1.5l-6.5 6.5M14.5 1.5l-4.5 13-3-6-6-3 13-4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+
+      <div class="contact-side">
+        <a href="mailto:fatimasumreen08@gmail.com" class="contact-link">
+          <span class="contact-link__icon">✉️</span>
+          fatimasumreen08@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/sumreen-fatima-sf08" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__icon">💼</span>
+          linkedin.com/in/sumreen-fatima
+        </a>
+        <a href="https://github.com/Sumreen-SF" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__icon">🗂️</span>
+          github.com/Sumreen-SF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Designed &amp; built by Sumreen Fatima <span class="footer__heart">♡</span> 2026</p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
